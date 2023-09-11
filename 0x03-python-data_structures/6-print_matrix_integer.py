@@ -5,6 +5,7 @@ def print_matrix_integer(matrix=[[]]):
             if column != row[len(row) - 1]:
                 print("{:d}".format(column), end=" ")
             else:
-                print("{}".format(column), end="$\n")
+                print("{}".format(column), end="\n")
 
-    print("--$\n$")
+    print("--")
+    print()
