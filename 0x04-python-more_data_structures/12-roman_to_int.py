@@ -2,10 +2,18 @@
 def roman_to_int(roman_string):
     total = 0
     previous = 'Z'
-    if isinstance(roman_string, str) == False or roman_string == None:
+    if isinstance(roman_string, str) is False or roman_string is None:
         return (0)
     else:
-        numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        numerals = {
+                'I': 1,
+                'V': 5,
+                'X': 10,
+                'L': 50,
+                'C': 100,
+                'D': 500,
+                'M': 1000
+        }
         for letter in roman_string:
             number = numerals.get(letter)
 
