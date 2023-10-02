@@ -4,11 +4,9 @@
 
 class Rectangle:
     """Definition of rectangle class"""
-
-
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """Initialize the instane."""
         self.__width = width
@@ -19,7 +17,7 @@ class Rectangle:
     def height(self):
         """Get the height"""
         return(self.__height)
-    
+
     @height.setter
     def height(self, value):
         """Set the height"""

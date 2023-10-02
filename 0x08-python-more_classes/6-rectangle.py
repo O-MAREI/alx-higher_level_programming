@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Create a Rectangle class."""
 
+
 class Rectangle:
     """Definition of rectangle class"""
-
     number_of_instances = 0
     print_symbol = "#"
-    
+
     def __init__(self, width=0, height=0):
         """Initialize the instane."""
         self.__width = width
@@ -17,7 +17,7 @@ class Rectangle:
     def height(self):
         """Get the height"""
         return(self.__height)
-    
+
     @height.setter
     def height(self, value):
         """Set the height"""
@@ -53,12 +53,11 @@ class Rectangle:
         width = self.width
         return(2 * (height + width))
 
-
     def __str__(self):
         """Print the rectangle."""
         if self.width == 0 or self.height == 0:
             return ""
-        return (((str(self.print_symbol) * self.width) + "\n") * self.height)[:-1]
+        return ((("#" * self.width) + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """Print the rectangle using eval."""
