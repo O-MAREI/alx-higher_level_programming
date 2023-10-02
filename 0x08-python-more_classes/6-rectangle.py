@@ -5,6 +5,7 @@ class Rectangle:
     """Definition of rectangle class"""
 
     number_of_instances = 0
+    print_symbol = "#"
     
     def __init__(self, width=0, height=0):
         """Initialize the instane."""
@@ -57,7 +58,7 @@ class Rectangle:
         """Print the rectangle."""
         if self.width == 0 or self.height == 0:
             return ""
-        return ((("#" * self.width) + "\n") * self.height)[:-1]
+        return (((str(self.print_symbol) * self.width) + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """Print the rectangle using eval."""

@@ -63,3 +63,31 @@ class Rectangle:
     def __repr__(self):
         """Print the rectangle using eval."""
         return "Rectangle({}, {})".format(self.width, self.height)
+
+    def __del__(self):
+        """Print a goodbye message at deletion."""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Compares 2 rectangles and returns the largest one."""
+        if rect_1 is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif rect_2 is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle.")
+        else:
+            area_1 = rect_1.area
+            area_2 = rect_2.area
+
+            if area_1 > area_2:
+                return (rect_1)
+            elif area_2 > area_1:
+                return (rect_2)
+            else:
+                return(rect_1)
+
+    @classmethod
+    def square(cls, size=0):
+        """Return a new Rectangle with width and height equal to size."""
+        return (cls(size, size))

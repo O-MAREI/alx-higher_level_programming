@@ -4,10 +4,14 @@
 class Rectangle:
     """Definition of rectangle class"""
 
+    number_of_instances = 0
+    print_symbol = "#"
+    
     def __init__(self, width=0, height=0):
         """Initialize the instane."""
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -41,12 +45,12 @@ class Rectangle:
 
     def area(self):
         """Get the area."""
-        return(self.width() * self.height())
+        return(self.width * self.height)
 
     def perimeter(self):
         """Get the perimeter"""
-        height = self.height()
-        width = self.width()
+        height = self.height
+        width = self.width
         return(2 * (height + width))
 
 
@@ -54,4 +58,4 @@ class Rectangle:
         """Print the rectangle."""
         if self.width == 0 or self.height == 0:
             return ""
-        return ((("#" * self.width) + "\n") * self.height)[:-1]
+        return (((str(self.print_symbol) * self.width) + "\n") * self.height)[:-1]
